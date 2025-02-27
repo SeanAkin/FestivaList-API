@@ -14,7 +14,7 @@ services:
     environment:
       - ConnectionStrings__DefaultConnection=Data Source=/data/FestivalShopping.db
     volumes:
-      - festival-data:/data
+      - festivalist-data:/data
     networks:
       - traefik-network
 
@@ -25,5 +25,6 @@ networks:
     driver: bridge
     
 volumes:
-  festival-data:
+  festivalist-data:
+    name: festivalist-data
     driver: local

@@ -58,7 +58,7 @@ public static class ShoppingListSeed
 
         var category1 = new Category
         {
-            CategoryId = 1,
+            CategoryId = Guid.NewGuid(),
             Name = "Camping Gear",
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
@@ -67,7 +67,7 @@ public static class ShoppingListSeed
 
         var category2 = new Category
         {
-            CategoryId = 2,
+            CategoryId = Guid.NewGuid(),
             Name = "Food & Drinks",
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
@@ -76,7 +76,7 @@ public static class ShoppingListSeed
 
         var category3 = new Category
         {
-            CategoryId = 3,
+            CategoryId = Guid.NewGuid(),
             Name = "Clothing",
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
@@ -90,7 +90,7 @@ public static class ShoppingListSeed
             Essential = true,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 1,
+            CategoryId = category1.CategoryId,
             Category = category1
         };
 
@@ -102,7 +102,7 @@ public static class ShoppingListSeed
             Essential = true,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 1,
+            CategoryId = category1.CategoryId,
             Category = category1
         };
 
@@ -114,7 +114,7 @@ public static class ShoppingListSeed
             Essential = false,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 1,
+            CategoryId = category1.CategoryId,
             Category = category1
         };
 
@@ -126,7 +126,7 @@ public static class ShoppingListSeed
             Essential = true,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 2,
+            CategoryId = category2.CategoryId,
             Category = category2
         };
 
@@ -138,7 +138,7 @@ public static class ShoppingListSeed
             Essential = false,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 2,
+            CategoryId = category2.CategoryId,
             Category = category2
         };
 
@@ -150,7 +150,7 @@ public static class ShoppingListSeed
             Essential = true,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 2,
+            CategoryId = category2.CategoryId,
             Category = category2
         };
 
@@ -162,7 +162,7 @@ public static class ShoppingListSeed
             Essential = true,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 3,
+            CategoryId = category3.CategoryId,
             Category = category3
         };
 
@@ -174,7 +174,7 @@ public static class ShoppingListSeed
             Essential = true,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 3,
+            CategoryId = category3.CategoryId,
             Category = category3
         };
 
@@ -186,7 +186,7 @@ public static class ShoppingListSeed
             Essential = false,
             ShoppingListId = shoppingListId,
             ShoppingList = shoppingList,
-            CategoryId = 3,
+            CategoryId = category3.CategoryId,
             Category = category3
         };
 

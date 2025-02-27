@@ -18,7 +18,7 @@ public record Item
     public Guid ShoppingListId { get; set; }
     public virtual ShoppingList ShoppingList { get; set; }  
     [ForeignKey("Category")]
-    public int CategoryId { get; set; }  
+    public Guid CategoryId { get; set; }  
     public virtual Category Category { get; set; }  
 }
 

@@ -36,7 +36,7 @@ public class ShoppingListExtensionsTests
             {
                 new()
                 {
-                    CategoryId = 1,
+                    CategoryId = new Guid(),
                     Name = "Category 1",
                     Items = new List<Item>
                     {
@@ -58,7 +58,7 @@ public class ShoppingListExtensionsTests
                 },
                 new()
                 {
-                    CategoryId = 2,
+                    CategoryId = new Guid(),
                     Name = "Category 2",
                     Items = []
                 }

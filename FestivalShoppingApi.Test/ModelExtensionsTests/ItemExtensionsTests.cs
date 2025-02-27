@@ -9,14 +9,15 @@ public class ItemExtensionsTests
     [Fact]
     public void Item_ConvertToDto_CorrectlyWithAllProperties()
     {
+        var categoryId = Guid.NewGuid();
         var testItem = new Item
         {
             ItemId = Guid.NewGuid(),
             Name = "Test Item",
             Url = "https://example.com/item",
             Essential = true,
-            CategoryId = 1,
-            Category = new Category { CategoryId = 1, Name = "Test Category" }
+            CategoryId = categoryId,
+            Category = new Category { CategoryId = categoryId, Name = "Test Category" }
         };
 
         var expectedDto = new ItemDto
@@ -35,13 +36,14 @@ public class ItemExtensionsTests
     [Fact]
     public void Item_ConvertToDto_CorrectlyWithoutUrl()
     {
+        var categoryId = Guid.NewGuid();
         var testItem = new Item
         {
             ItemId = Guid.NewGuid(),
             Name = "Test Item Without URL",
             Essential = false,
-            CategoryId = 1,
-            Category = new Category { CategoryId = 1, Name = "Test Category" }
+            CategoryId = categoryId,
+            Category = new Category { CategoryId = categoryId, Name = "Test Category" }
         };
 
         var expectedDto = new ItemDto

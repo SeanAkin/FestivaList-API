@@ -3,28 +3,25 @@ using System;
 using FestivalShoppingApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace FestivalShoppingApi.Data.Migrations
+namespace FestivalShoppingApi.Data.Data.Migrations
 {
     [DbContext(typeof(FestivalShoppingContext))]
-    [Migration("20250212224722_SeedData")]
-    partial class SeedData
+    partial class FestivalShoppingContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
 
             modelBuilder.Entity("FestivalShoppingApi.Data.Models.Category", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<Guid>("CategoryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -43,21 +40,21 @@ namespace FestivalShoppingApi.Data.Migrations
                     b.HasData(
                         new
                         {
-                            CategoryId = 1,
+                            CategoryId = new Guid("142295b9-ea08-4c36-ae62-abccdd5750fd"),
                             Name = "Camping Gear",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d")
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778")
                         },
                         new
                         {
-                            CategoryId = 2,
+                            CategoryId = new Guid("814ecaaf-d9ce-4cc1-a56e-8e1eeb88e4eb"),
                             Name = "Food & Drinks",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d")
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778")
                         },
                         new
                         {
-                            CategoryId = 3,
+                            CategoryId = new Guid("818f8e2f-6f65-4ac7-91f1-b49e3b6ecef6"),
                             Name = "Clothing",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d")
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778")
                         });
                 });
 
@@ -67,8 +64,8 @@ namespace FestivalShoppingApi.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("INTEGER");
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("Essential")
                         .HasColumnType("INTEGER");
@@ -95,83 +92,83 @@ namespace FestivalShoppingApi.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ItemId = new Guid("d537a14a-487a-4947-bd83-cddfa8c040e2"),
-                            CategoryId = 1,
+                            ItemId = new Guid("b20c0ea7-98f9-4af9-81aa-059a782c6506"),
+                            CategoryId = new Guid("142295b9-ea08-4c36-ae62-abccdd5750fd"),
                             Essential = true,
                             Name = "Tent",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/tent"
                         },
                         new
                         {
-                            ItemId = new Guid("b554f9b0-2856-43c6-ae6f-3d2d62b22572"),
-                            CategoryId = 1,
+                            ItemId = new Guid("4bd7a802-314a-4bd4-88c3-bbc9cc039afc"),
+                            CategoryId = new Guid("142295b9-ea08-4c36-ae62-abccdd5750fd"),
                             Essential = true,
                             Name = "Sleeping Bag",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/sleeping-bag"
                         },
                         new
                         {
-                            ItemId = new Guid("b18c6e30-bfb7-4be0-b26f-9e33eea09e72"),
-                            CategoryId = 1,
+                            ItemId = new Guid("4b5f175b-4929-48f3-a717-225c8888b8f3"),
+                            CategoryId = new Guid("142295b9-ea08-4c36-ae62-abccdd5750fd"),
                             Essential = false,
                             Name = "Camping Stove",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/camping-stove"
                         },
                         new
                         {
-                            ItemId = new Guid("dc76dd85-9c9b-4f46-a02f-4104683a6c53"),
-                            CategoryId = 2,
+                            ItemId = new Guid("5c47049f-846c-42f3-9290-e5a778cea53d"),
+                            CategoryId = new Guid("814ecaaf-d9ce-4cc1-a56e-8e1eeb88e4eb"),
                             Essential = true,
                             Name = "Water Bottles",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/water-bottles"
                         },
                         new
                         {
-                            ItemId = new Guid("776edefb-31d3-4bea-82a1-2736f8d5f4e3"),
-                            CategoryId = 2,
+                            ItemId = new Guid("a1700298-391d-4431-a34b-790595ae96cb"),
+                            CategoryId = new Guid("814ecaaf-d9ce-4cc1-a56e-8e1eeb88e4eb"),
                             Essential = false,
                             Name = "Snacks",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/snacks"
                         },
                         new
                         {
-                            ItemId = new Guid("ef5c5204-4ae8-4591-a3d3-d7769225b4fa"),
-                            CategoryId = 2,
+                            ItemId = new Guid("861dbde2-ec71-454e-a3f3-0c3349ce4002"),
+                            CategoryId = new Guid("814ecaaf-d9ce-4cc1-a56e-8e1eeb88e4eb"),
                             Essential = true,
                             Name = "Canned Food",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/canned-food"
                         },
                         new
                         {
-                            ItemId = new Guid("28262b00-0905-47c5-b300-77a0193f373e"),
-                            CategoryId = 3,
+                            ItemId = new Guid("f70d9891-c283-4dad-b82b-311a8a61ac1d"),
+                            CategoryId = new Guid("818f8e2f-6f65-4ac7-91f1-b49e3b6ecef6"),
                             Essential = true,
                             Name = "Rain Jacket",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/rain-jacket"
                         },
                         new
                         {
-                            ItemId = new Guid("d2105fde-3967-4366-ac97-9f26432f5484"),
-                            CategoryId = 3,
+                            ItemId = new Guid("ebf8dd16-08d3-4da9-bd59-b28778583b8b"),
+                            CategoryId = new Guid("818f8e2f-6f65-4ac7-91f1-b49e3b6ecef6"),
                             Essential = true,
                             Name = "Hiking Boots",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/hiking-boots"
                         },
                         new
                         {
-                            ItemId = new Guid("c118e240-7b43-487f-aa57-5523d3686d61"),
-                            CategoryId = 3,
+                            ItemId = new Guid("b63523c2-57b4-415b-b5cd-8e617dd20196"),
+                            CategoryId = new Guid("818f8e2f-6f65-4ac7-91f1-b49e3b6ecef6"),
                             Essential = false,
                             Name = "Sunglasses",
-                            ShoppingListId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            ShoppingListId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Url = "https://example.com/sunglasses"
                         });
                 });
@@ -193,7 +190,7 @@ namespace FestivalShoppingApi.Data.Migrations
                     b.HasData(
                         new
                         {
-                            GuidId = new Guid("53fb2f13-37b4-41aa-a7cb-ccf484500b6d"),
+                            GuidId = new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"),
                             Name = "Festival Shopping List"
                         });
                 });

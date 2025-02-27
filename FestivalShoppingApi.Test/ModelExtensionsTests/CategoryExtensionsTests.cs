@@ -11,7 +11,7 @@ public class CategoryExtensionsTests
     {
         var testCategory = new Category
         {
-            CategoryId = 1,
+            CategoryId = Guid.NewGuid(),
             Name = "Test Category",
         };
 
@@ -32,7 +32,7 @@ public class CategoryExtensionsTests
     {
         var testCategory = new Category
         {
-            CategoryId = 1,
+            CategoryId = Guid.NewGuid(),
             Name = "Test Category",
             Items =
             [
