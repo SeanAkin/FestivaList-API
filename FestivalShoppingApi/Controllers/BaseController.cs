@@ -8,7 +8,6 @@ namespace FestivalShoppingApi.Controllers
     {
         protected ActionResult ResolveResult<T>(Result<T> result)
             => StatusCode(result.ResponseCode, result);
-
         
         protected ActionResult ResolveResult(Result result)
             => StatusCode(result.ResponseCode, result);

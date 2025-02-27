@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace FestivalShoppingApi.Data.Data.Migrations
+namespace FestivalShoppingApi.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
@@ -75,16 +75,16 @@ namespace FestivalShoppingApi.Data.Data.Migrations
             migrationBuilder.InsertData(
                 table: "ShoppingLists",
                 columns: new[] { "GuidId", "Name" },
-                values: new object[] { new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "Festival Shopping List" });
+                values: new object[] { new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "Festival Shopping List" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "Name", "ShoppingListId" },
                 values: new object[,]
                 {
-                    { new Guid("142295b9-ea08-4c36-ae62-abccdd5750fd"), "Camping Gear", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778") },
-                    { new Guid("814ecaaf-d9ce-4cc1-a56e-8e1eeb88e4eb"), "Food & Drinks", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778") },
-                    { new Guid("818f8e2f-6f65-4ac7-91f1-b49e3b6ecef6"), "Clothing", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778") }
+                    { new Guid("3e5f85d9-e0fd-4266-aa65-25f07bc0fea9"), "Food & Drinks", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857") },
+                    { new Guid("57b096f9-f827-420c-927c-ed39cd9cd997"), "Clothing", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857") },
+                    { new Guid("892a6935-17e0-4230-9b76-58385a584394"), "Camping Gear", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857") }
                 });
 
             migrationBuilder.InsertData(
@@ -92,15 +92,15 @@ namespace FestivalShoppingApi.Data.Data.Migrations
                 columns: new[] { "ItemId", "CategoryId", "Essential", "Name", "ShoppingListId", "Url" },
                 values: new object[,]
                 {
-                    { new Guid("4b5f175b-4929-48f3-a717-225c8888b8f3"), new Guid("142295b9-ea08-4c36-ae62-abccdd5750fd"), false, "Camping Stove", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/camping-stove" },
-                    { new Guid("4bd7a802-314a-4bd4-88c3-bbc9cc039afc"), new Guid("142295b9-ea08-4c36-ae62-abccdd5750fd"), true, "Sleeping Bag", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/sleeping-bag" },
-                    { new Guid("5c47049f-846c-42f3-9290-e5a778cea53d"), new Guid("814ecaaf-d9ce-4cc1-a56e-8e1eeb88e4eb"), true, "Water Bottles", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/water-bottles" },
-                    { new Guid("861dbde2-ec71-454e-a3f3-0c3349ce4002"), new Guid("814ecaaf-d9ce-4cc1-a56e-8e1eeb88e4eb"), true, "Canned Food", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/canned-food" },
-                    { new Guid("a1700298-391d-4431-a34b-790595ae96cb"), new Guid("814ecaaf-d9ce-4cc1-a56e-8e1eeb88e4eb"), false, "Snacks", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/snacks" },
-                    { new Guid("b20c0ea7-98f9-4af9-81aa-059a782c6506"), new Guid("142295b9-ea08-4c36-ae62-abccdd5750fd"), true, "Tent", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/tent" },
-                    { new Guid("b63523c2-57b4-415b-b5cd-8e617dd20196"), new Guid("818f8e2f-6f65-4ac7-91f1-b49e3b6ecef6"), false, "Sunglasses", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/sunglasses" },
-                    { new Guid("ebf8dd16-08d3-4da9-bd59-b28778583b8b"), new Guid("818f8e2f-6f65-4ac7-91f1-b49e3b6ecef6"), true, "Hiking Boots", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/hiking-boots" },
-                    { new Guid("f70d9891-c283-4dad-b82b-311a8a61ac1d"), new Guid("818f8e2f-6f65-4ac7-91f1-b49e3b6ecef6"), true, "Rain Jacket", new Guid("c945b1a9-9a47-4bcd-9a11-3ec930d2c778"), "https://example.com/rain-jacket" }
+                    { new Guid("07db6b6c-9d46-4de1-9c6e-0a318e307322"), new Guid("3e5f85d9-e0fd-4266-aa65-25f07bc0fea9"), false, "Snacks", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/snacks" },
+                    { new Guid("3d7b6cdd-a194-45a5-a439-9b3ad66fefb7"), new Guid("892a6935-17e0-4230-9b76-58385a584394"), true, "Sleeping Bag", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/sleeping-bag" },
+                    { new Guid("5b4cfc6f-2e76-4a44-888f-2b8413370fcd"), new Guid("3e5f85d9-e0fd-4266-aa65-25f07bc0fea9"), true, "Canned Food", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/canned-food" },
+                    { new Guid("75546a6d-8a55-4e79-ab43-033e3b7b5d1d"), new Guid("892a6935-17e0-4230-9b76-58385a584394"), true, "Tent", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/tent" },
+                    { new Guid("966129e9-d399-4179-ae86-8a7b38d258e0"), new Guid("57b096f9-f827-420c-927c-ed39cd9cd997"), true, "Rain Jacket", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/rain-jacket" },
+                    { new Guid("e0645387-9e53-4924-82e5-8f6a05280c83"), new Guid("3e5f85d9-e0fd-4266-aa65-25f07bc0fea9"), true, "Water Bottles", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/water-bottles" },
+                    { new Guid("ea2bf610-fe2a-4c0f-9e4e-37474153a785"), new Guid("57b096f9-f827-420c-927c-ed39cd9cd997"), false, "Sunglasses", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/sunglasses" },
+                    { new Guid("f25a8604-641a-4636-8ba2-083d08bea718"), new Guid("57b096f9-f827-420c-927c-ed39cd9cd997"), true, "Hiking Boots", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/hiking-boots" },
+                    { new Guid("f82f2378-0e64-4f3f-868f-e9d6d23f69cc"), new Guid("892a6935-17e0-4230-9b76-58385a584394"), false, "Camping Stove", new Guid("a169ab83-66df-4d32-995b-fe0467c1d857"), "https://example.com/camping-stove" }
                 });
 
             migrationBuilder.CreateIndex(
