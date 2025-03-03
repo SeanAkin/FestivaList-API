@@ -7,16 +7,15 @@ namespace FestivalShoppingApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-
 public class ItemController(IItemService itemService) : BaseController
 {
     [HttpPost]
-    [Route("Create")]
-    public async Task<ActionResult<IEnumerable<Item>>> CreateItem(NewItemRequest newItemRequest)
+    [Route("")]
+    public async Task<ActionResult<Item>> CreateItem(NewItemRequest newItemRequest)
         => ResolveResult(await itemService.CreateItem(newItemRequest));
 
     [HttpDelete]
-    [Route("Delete")]
-    public async Task<ActionResult> DeleteItem(Guid categoryId, Guid itemId)
-        => ResolveResult(await itemService.DeleteItem(categoryId, itemId));
+    [Route("{itemId}")]
+    public async Task<ActionResult> DeleteItem(Guid itemId)
+        => ResolveResult(await itemService.DeleteItem(itemId));
 }

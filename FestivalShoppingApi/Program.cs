@@ -1,11 +1,18 @@
 using FestivalShoppingApi.Data;
 using FestivalShoppingApi.Domain.Contracts;
 using FestivalShoppingApi.Domain.Services;
+using FestivalShoppingApi.Transformers;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(o =>
+{
+    o.Conventions.Add(new RouteTokenTransformerConvention(new LowercaseRouteTransformer()));
+});
+
 builder.Services.AddHealthChecks();
 
 builder.Services.AddEndpointsApiExplorer();

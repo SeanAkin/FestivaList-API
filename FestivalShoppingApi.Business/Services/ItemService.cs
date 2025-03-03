@@ -22,10 +22,10 @@ public class ItemService(FestivalShoppingContext context) : IItemService
         return Result.SuccessResult();
     }
 
-    public async Task<Result> DeleteItem(Guid categoryId, Guid itemId)
+    public async Task<Result> DeleteItem(Guid itemId)
     {
         var item = await context.Items.FindAsync(itemId);
-        if (item == null || item.CategoryId != categoryId)
+        if (item == null)
         {
             return Result.FailureResult("Item not found", HttpStatusCode.NotFound);
         }

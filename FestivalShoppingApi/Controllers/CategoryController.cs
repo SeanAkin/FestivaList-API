@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.RateLimiting;
 namespace FestivalShoppingApi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("categories")]
 [EnableRateLimiting("Default")]
 public class CategoryController : BaseController
 {
@@ -17,11 +17,11 @@ public class CategoryController : BaseController
         _categoryService = categoryService;
     }
     
-    [HttpPost("{guid}/Create")]
-    public async Task<ActionResult<Result>> CreateCategory(Guid guid, NewCategoryRequest newCategoryRequest)
-        => ResolveResult(await _categoryService.CreateCategory(guid, newCategoryRequest));
+    [HttpPost("{shoppingListId}")]
+    public async Task<ActionResult<Result>> CreateCategory(Guid shoppingListId, [FromBody] NewCategoryRequest newCategoryRequest)
+        => ResolveResult(await _categoryService.CreateCategory(shoppingListId, newCategoryRequest));
 
-    [HttpDelete("{guid}/Delete")]
-    public async Task<ActionResult<Result>> DeleteCategory(Guid guid)
-        => ResolveResult(await _categoryService.DeleteCategory(guid));
+    [HttpDelete("{categoryId}")]
+    public async Task<ActionResult<Result>> DeleteCategory(Guid categoryId)
+        => ResolveResult(await _categoryService.DeleteCategory(categoryId));
 }
