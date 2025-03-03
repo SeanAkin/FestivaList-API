@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FestivalShoppingApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("shopping-list")]
     public class ShoppingListController : BaseController
     {
         private readonly IShoppingListService _shoppingListService;
@@ -22,17 +22,16 @@ namespace FestivalShoppingApi.Controllers
             _context = context;
         }
 
-        [HttpPost(Name = "Create")]
+        [HttpPost(Name = "")]
         [EnableRateLimiting("Create-New-List")]
         public async Task<ActionResult<Result<Guid>>> CreateNewShoppingList(string name)
             => ResolveResult(await _shoppingListService.CreateShoppingList(name));
         
-        [HttpGet("{guid}")]
-        public async Task<ActionResult<Result<ShoppingListDto?>>> Get(Guid guid)
-            => ResolveResult(await _shoppingListService.GetShoppingList(guid));
+        [HttpGet("{shoppingListId}")]
+        public async Task<ActionResult<Result<ShoppingListDto?>>> Get(Guid shoppingListId)
+            => ResolveResult(await _shoppingListService.GetShoppingList(shoppingListId));
 
-        // TODO: Remove this method.
-        [HttpGet("All")]
+        [HttpGet("")]
         public async Task<ActionResult<IEnumerable<ShoppingListDto>>> GetAllShoppingList()
         {
             var shoppingList = await _context.ShoppingLists.

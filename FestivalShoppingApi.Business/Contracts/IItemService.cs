@@ -6,5 +6,5 @@ namespace FestivalShoppingApi.Domain.Contracts;
 public interface IItemService
 {
     public Task<Result> CreateItem(NewItemRequest newItemRequest);
-    public Task<Result> DeleteItem(Guid categoryId, Guid itemId);
+    public Task<Result> DeleteItem(Guid itemId);
 }

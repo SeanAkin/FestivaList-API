@@ -2,13 +2,19 @@ using System.Threading.RateLimiting;
 using FestivalShoppingApi.Data;
 using FestivalShoppingApi.Domain.Contracts;
 using FestivalShoppingApi.Domain.Services;
+using FestivalShoppingApi.Transformers;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(o =>
+{
+    o.Conventions.Add(new RouteTokenTransformerConvention(new LowercaseRouteTransformer()));
+});
 builder.Services.AddHealthChecks();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
