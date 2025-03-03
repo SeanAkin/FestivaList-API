@@ -1,4 +1,3 @@
-using System.Threading.RateLimiting;
 using FestivalShoppingApi.Data;
 using FestivalShoppingApi.Domain.Contracts;
 using FestivalShoppingApi.Domain.Services;
@@ -6,12 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddHealthChecks();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FestivalShoppingContext>(opt 
@@ -21,28 +17,7 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 if (!builder.Environment.IsDevelopment())
 {
-    builder.Services.AddRateLimiter(opt =>
-    {
-        opt.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
-    
-        opt.AddPolicy("Default", context => 
-            RateLimitPartition.GetFixedWindowLimiter(
-                partitionKey: context.Connection.RemoteIpAddress?.ToString(),
-                factory: partition => new FixedWindowRateLimiterOptions
-                {
-                    PermitLimit = 15,
-                    Window = TimeSpan.FromSeconds(10)
-                }));
-    
-        opt.AddPolicy("Create-New-List", context => 
-            RateLimitPartition.GetFixedWindowLimiter(
-                partitionKey: context.Connection.RemoteIpAddress?.ToString(),
-                factory: partition => new FixedWindowRateLimiterOptions
-                {
-                    PermitLimit = 1,
-                    Window = TimeSpan.FromMinutes(5)
-                }));
-    });
+    builder.Services.AddRateLimiter(opt => RateLimitingOptionsExtensions.ConfigureRateLimitingOptions(opt));
 }
 
 var app = builder.Build();
@@ -54,8 +29,6 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.MapHealthChecks("/health");
-
-// Configure the HTTP request pipeline.
 
 app.UsePathBase("/festival-shopping-api");
 app.UseSwagger();
