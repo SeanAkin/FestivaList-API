@@ -4,7 +4,6 @@ using FestivalShoppingApi.Domain.Services;
 using FestivalShoppingApi.Transformers;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
