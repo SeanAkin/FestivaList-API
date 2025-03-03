@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\FestivalShoppingApi.Data\FestivalShoppingApi.Data.csproj" />
+    </ItemGroup>
+
 </Project>
