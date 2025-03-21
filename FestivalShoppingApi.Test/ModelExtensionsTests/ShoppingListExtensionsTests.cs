@@ -18,6 +18,7 @@ public class ShoppingListExtensionsTests
         var expectedDto = new ShoppingListDto
         {
             ShoppingListId = testShoppingList.GuidId,
+            Name = testShoppingList.Name,
             Categories = []
         };
 
@@ -68,6 +69,7 @@ public class ShoppingListExtensionsTests
         var expectedDto = new ShoppingListDto
         {
             ShoppingListId = testShoppingList.GuidId,
+            Name = testShoppingList.Name,
             Categories = testShoppingList.Categories.Select(c => new CategoryDto
             {
                 CategoryId = c.CategoryId,

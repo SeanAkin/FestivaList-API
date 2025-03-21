@@ -1,4 +1,5 @@
 using FestivalShoppingApi.Common.Models;
+using FestivalShoppingApi.Data.Dtos;
 using FestivalShoppingApi.Data.RequestModels;
 using FestivalShoppingApi.Domain.Contracts;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ public class CategoryController : BaseController
     }
     
     [HttpPost("{shoppingListId}")]
-    public async Task<ActionResult<Result>> CreateCategory(Guid shoppingListId, [FromBody] NewCategoryRequest newCategoryRequest)
+    public async Task<ActionResult<Result<CategoryDto>>> CreateCategory(Guid shoppingListId, [FromBody] NewCategoryRequest newCategoryRequest)
         => ResolveResult(await _categoryService.CreateCategory(shoppingListId, newCategoryRequest));
 
     [HttpDelete("{categoryId}")]

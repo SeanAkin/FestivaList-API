@@ -14,9 +14,6 @@ public record Item
     public string Name { get; set; } = string.Empty;
     public string? Url { get; set; }
     public bool Essential { get; set; }
-    [ForeignKey("ShoppingList")]
-    public Guid ShoppingListId { get; set; }
-    public virtual ShoppingList ShoppingList { get; set; }  
     [ForeignKey("Category")]
     public Guid CategoryId { get; set; }  
     public virtual Category Category { get; set; }  

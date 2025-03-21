@@ -35,7 +35,6 @@ public static class ShoppingListSeed
                 Name = item.Name,
                 Url = item.Url,
                 Essential = item.Essential,
-                ShoppingListId = item.ShoppingListId,
                 CategoryId = item.CategoryId
             }).ToArray();
 
@@ -88,8 +87,6 @@ public static class ShoppingListSeed
             Name = "Tent",
             Url = "https://example.com/tent",
             Essential = true,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category1.CategoryId,
             Category = category1
         };
@@ -100,8 +97,6 @@ public static class ShoppingListSeed
             Name = "Sleeping Bag",
             Url = "https://example.com/sleeping-bag",
             Essential = true,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category1.CategoryId,
             Category = category1
         };
@@ -112,8 +107,6 @@ public static class ShoppingListSeed
             Name = "Camping Stove",
             Url = "https://example.com/camping-stove",
             Essential = false,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category1.CategoryId,
             Category = category1
         };
@@ -124,8 +117,6 @@ public static class ShoppingListSeed
             Name = "Water Bottles",
             Url = "https://example.com/water-bottles",
             Essential = true,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category2.CategoryId,
             Category = category2
         };
@@ -136,8 +127,6 @@ public static class ShoppingListSeed
             Name = "Snacks",
             Url = "https://example.com/snacks",
             Essential = false,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category2.CategoryId,
             Category = category2
         };
@@ -148,8 +137,6 @@ public static class ShoppingListSeed
             Name = "Canned Food",
             Url = "https://example.com/canned-food",
             Essential = true,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category2.CategoryId,
             Category = category2
         };
@@ -160,8 +147,6 @@ public static class ShoppingListSeed
             Name = "Rain Jacket",
             Url = "https://example.com/rain-jacket",
             Essential = true,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category3.CategoryId,
             Category = category3
         };
@@ -172,8 +157,6 @@ public static class ShoppingListSeed
             Name = "Hiking Boots",
             Url = "https://example.com/hiking-boots",
             Essential = true,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category3.CategoryId,
             Category = category3
         };
@@ -184,8 +167,6 @@ public static class ShoppingListSeed
             Name = "Sunglasses",
             Url = "https://example.com/sunglasses",
             Essential = false,
-            ShoppingListId = shoppingListId,
-            ShoppingList = shoppingList,
             CategoryId = category3.CategoryId,
             Category = category3
         };

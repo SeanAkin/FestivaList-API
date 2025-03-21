@@ -1,6 +1,7 @@
 using System.Net;
 using FestivalShoppingApi.Common.Models;
 using FestivalShoppingApi.Data;
+using FestivalShoppingApi.Data.Dtos;
 using FestivalShoppingApi.Data.Models;
 using FestivalShoppingApi.Data.RequestModels;
 using FestivalShoppingApi.Domain.Contracts;
@@ -10,12 +11,12 @@ namespace FestivalShoppingApi.Domain.Services;
 public class CategoryService(FestivalShoppingContext context, IShoppingListService shoppingListService)
     : ICategoryService
 {
-    public async Task<Result> CreateCategory(Guid guid, NewCategoryRequest newCategoryRequest)
+    public async Task<Result<CategoryDto>> CreateCategory(Guid guid, NewCategoryRequest newCategoryRequest)
     {
         var shoppingListExists = await shoppingListService.Exists(guid);
         if (shoppingListExists is false)
         {
-            return Result.FailureResult("Shopping list doesn't exist", HttpStatusCode.NotFound);
+            return Result<CategoryDto>.FailureResult("Shopping list doesn't exist", HttpStatusCode.NotFound);
         }
     
         var categoryToAdd = new Category()
@@ -27,7 +28,7 @@ public class CategoryService(FestivalShoppingContext context, IShoppingListServi
         await context.AddAsync(categoryToAdd);
         await context.SaveChangesAsync();
     
-        return Result.SuccessResult();
+        return Result<CategoryDto>.SuccessResult(categoryToAdd.ConvertToDto());
     }
 
     public async Task<Result> DeleteCategory(Guid guid)

@@ -1,6 +1,8 @@
 using System.Net;
 using FestivalShoppingApi.Common.Models;
 using FestivalShoppingApi.Data;
+using FestivalShoppingApi.Data.Dtos;
+using FestivalShoppingApi.Data.Models;
 using FestivalShoppingApi.Data.RequestModels;
 using FestivalShoppingApi.Domain.Contracts;
 
@@ -8,18 +10,18 @@ namespace FestivalShoppingApi.Domain.Services;
 
 public class ItemService(FestivalShoppingContext context) : IItemService
 {
-    public async Task<Result> CreateItem(NewItemRequest newItemRequest)
+    public async Task<Result<ItemDto>> CreateItem(NewItemRequest newItemRequest)
     {
         var category = await context.Categories.FindAsync(newItemRequest.CategoryId);
         if (category == null)
         {
-            return Result.FailureResult("Category not found", HttpStatusCode.NotFound);
+            return Result<ItemDto>.FailureResult("Category not found", HttpStatusCode.NotFound);
         }
-        
-        category.Items.Add(newItemRequest.ToItem());
+        var item = newItemRequest.ToItem();
+        category.Items.Add(item);
         await context.SaveChangesAsync();
         
-        return Result.SuccessResult();
+        return Result<ItemDto>.SuccessResult(item.ConvertToDto());
     }
 
     public async Task<Result> DeleteItem(Guid itemId)

@@ -20,6 +20,7 @@ builder.Services.AddDbContext<FestivalShoppingContext>(opt
     => opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IShoppingListService, ShoppingListService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IItemService, ItemService>();
 
 if (!builder.Environment.IsDevelopment())
 {

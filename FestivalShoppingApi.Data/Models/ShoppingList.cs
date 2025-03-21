@@ -18,6 +18,7 @@ public static class ShoppingListExtensions
         return new ShoppingListDto
         {
             ShoppingListId = shoppingList.GuidId,
+            Name = shoppingList.Name,
             Categories = shoppingList.Categories.Select(c => c.ConvertToDto()).ToList()
         };
     }
