@@ -1,7 +1,5 @@
+using FestivalShoppingApi.Common.Dtos;
 using FestivalShoppingApi.Common.Models;
-using FestivalShoppingApi.Data.Dtos;
-using FestivalShoppingApi.Data.Models;
-using FestivalShoppingApi.Data.RequestModels;
 
 namespace FestivalShoppingApi.Domain.Contracts;
 

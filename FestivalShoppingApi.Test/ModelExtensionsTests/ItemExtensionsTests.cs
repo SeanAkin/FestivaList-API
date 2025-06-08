@@ -1,4 +1,4 @@
-using FestivalShoppingApi.Data.Dtos;
+using FestivalShoppingApi.Common.Dtos;
 using FestivalShoppingApi.Data.Models;
 using FluentAssertions;
 

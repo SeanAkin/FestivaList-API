@@ -1,5 +1,5 @@
+using FestivalShoppingApi.Common.Dtos;
 using FestivalShoppingApi.Common.Models;
-using FestivalShoppingApi.Data.Dtos;
 using FestivalShoppingApi.Data.RequestModels;
 using FestivalShoppingApi.Domain.Contracts;
 using Microsoft.AspNetCore.Mvc;

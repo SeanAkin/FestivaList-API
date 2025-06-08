@@ -21,6 +21,7 @@ builder.Services.AddDbContext<FestivalShoppingContext>(opt
 builder.Services.AddScoped<IShoppingListService, ShoppingListService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IItemService, ItemService>();
+builder.Services.AddScoped<IShopperService, ShopperService>();
 
 if (!builder.Environment.IsDevelopment())
 {
@@ -47,7 +48,6 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseRateLimiter();
 }
-
 app.UseAuthorization();
 
 app.MapControllers();

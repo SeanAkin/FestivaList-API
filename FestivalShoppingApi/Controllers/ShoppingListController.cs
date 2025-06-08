@@ -1,8 +1,6 @@
+using FestivalShoppingApi.Common.Dtos;
 using FestivalShoppingApi.Common.Models;
 using FestivalShoppingApi.Data;
-using FestivalShoppingApi.Data.Dtos;
-using FestivalShoppingApi.Data.Models;
-using FestivalShoppingApi.Data.RequestModels;
 using FestivalShoppingApi.Domain.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
